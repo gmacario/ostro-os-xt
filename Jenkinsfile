@@ -91,12 +91,9 @@ try {
             }
             def docker_image = docker.image(image_name)
 
-            // run_args = ["-v ${env.PUBLISH_DIR}:${env.PUBLISH_DIR}:rw",
-            //            run_proxy_args()].join(" ")
-            
             run_args = ["-v ${env.PUBLISH_DIR}:${env.PUBLISH_DIR}:rw",
-                        ""].join(" ")
-            
+                       run_proxy_args()].join(" ")
+
             // Prepare environment for calling other scripts.
             def script_env = """
                 export WORKSPACE=\$PWD
@@ -223,16 +220,18 @@ echo "End of pipeline"
 
 // Support functions:
 def build_proxy_args() {
-    return ["--build-arg http_proxy=${env.http_proxy}",
-            "--build-arg https_proxy=${env.https_proxy}",
-            "--build-arg ALL_PROXY=${env.ALL_PROXY}"].join(" ")
+    return " "
+    // return ["--build-arg http_proxy=${env.http_proxy}",
+    //         "--build-arg https_proxy=${env.https_proxy}",
+    //         "--build-arg ALL_PROXY=${env.ALL_PROXY}"].join(" ")
 }
 
 def run_proxy_args() {
-    return [ "-e http_proxy=${env.http_proxy}",
-             "-e https_proxy=${env.https_proxy}",
-             "-e ALL_PROXY=${env.ALL_PROXY}",
-             "-e no_proxy=${env.NO_PROXY}"].join(" ")
+    return " "
+    // return [ "-e http_proxy=${env.http_proxy}",
+    //          "-e https_proxy=${env.https_proxy}",
+    //          "-e ALL_PROXY=${env.ALL_PROXY}",
+    //          "-e no_proxy=${env.NO_PROXY}"].join(" ")
 }
 
 def build_user_args() {
