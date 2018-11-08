@@ -75,6 +75,7 @@ try {
                     ])
                 } else {
                     echo "Checkout: checkout in MASTER case"
+                    echo "FIXME: Does not recurse submodules!"
                     checkout poll: false, scm: scm
                 }
             }
