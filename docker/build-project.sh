@@ -29,7 +29,12 @@ CI_GIT_COMMIT=$(git rev-parse HEAD)
 
 # FIXME: undbound variables used without checking:
 set +u
+echo "=== DEBUG BEGIN ==="
+set -x
+pwd
+ls -la
 source ostro-init-build-env $BUILD_DIR
+echo "=== DEBUG END ==="
 set -u
 
 if [ ! -z ${JOB_NAME+x} ]; then
