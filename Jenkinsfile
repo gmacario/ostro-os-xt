@@ -86,7 +86,7 @@ try {
 
                 def build_args = [ build_proxy_args(), build_user_args()].join(" ")
 
-                sh "docker build -t ${image_name} ${build_args} docker/${build_os}"
+                // sh "docker build -t ${image_name} ${build_args} docker/${build_os}"
                 dockerFingerprintFrom dockerfile: "docker/${build_os}/Dockerfile", image: "${image_name}"
             }
             def docker_image = docker.image(image_name)
