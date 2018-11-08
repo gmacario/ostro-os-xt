@@ -27,7 +27,7 @@ def test_devices = [ "bxtc", "minnowboardmax" ]
 
 // Base container OS to use
 // opensuse-42.1, opensuse-tumbleweed, fedora-23, ...
-def build_os = "fedora-23"
+def build_os = "ubuntu-16.04"
 
 
 // JOB_NAME expected to be in form <layer>_<branch>
