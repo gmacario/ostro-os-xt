@@ -91,9 +91,12 @@ try {
             }
             def docker_image = docker.image(image_name)
 
+            // run_args = ["-v ${env.PUBLISH_DIR}:${env.PUBLISH_DIR}:rw",
+            //            run_proxy_args()].join(" ")
+            
             run_args = ["-v ${env.PUBLISH_DIR}:${env.PUBLISH_DIR}:rw",
-                        run_proxy_args()].join(" ")
-
+                        ""].join(" ")
+            
             // Prepare environment for calling other scripts.
             def script_env = """
                 export WORKSPACE=\$PWD
