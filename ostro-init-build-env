@@ -59,6 +59,12 @@ if [ -z "$OEROOT" ]; then
 fi
 unset THIS_SCRIPT
 
+echo "=== DEBUG BEGIN ==="
+set -x
+echo "DEBUG: OEROOT=${OEROOT}"
+ls -la
+ls -la $OEROOT/scripts
+echo "=== DEBUG END ==="
 export OEROOT
 . $OEROOT/scripts/oe-buildenv-internal &&
     TEMPLATECONF="$TEMPLATECONF" $OEROOT/scripts/oe-setup-builddir || {
