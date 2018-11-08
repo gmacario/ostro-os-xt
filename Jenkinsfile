@@ -103,9 +103,9 @@ try {
                 export BASE_DISTRO=${base_distro}
                 export CURRENT_PROJECT=${current_project}
                 export BUILD_CACHE_DIR=${env.PUBLISH_DIR}/bb-cache
-                // TODO export PUBLISH_DIR=${env.PUBLISH_DIR}
+                # TODO export PUBLISH_DIR=${env.PUBLISH_DIR}
                 export PUBLISH_DIR=\$HOME/gm-publish
-                //
+                #
                 export GIT_PROXY_COMMAND=oe-git-proxy
                 export CI_BUILD_ID=${env.BUILD_TIMESTAMP}-build-${env.BUILD_NUMBER}
                 export TARGET_MACHINE=${target_machine}
