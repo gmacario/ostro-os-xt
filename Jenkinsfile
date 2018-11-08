@@ -27,12 +27,12 @@ def test_devices = [ "bxtc", "minnowboardmax" ]
 
 // Base container OS to use
 // opensuse-42.1, opensuse-tumbleweed, fedora-23, ...
-def build_os = "fedora-23"
+// def build_os = "fedora-23"
 
 
 // JOB_NAME expected to be in form <layer>_<branch>
 def current_project = "${env.JOB_NAME}".tokenize("_")[0]
-def image_name = "${current_project}_build:${env.BUILD_TAG}"
+def image_name = "gmacario/build-yocto" // "${current_project}_build:${env.BUILD_TAG}"
 
 def testing_script = ""
 def testinfo_data = ""
