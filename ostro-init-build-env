@@ -61,8 +61,10 @@ unset THIS_SCRIPT
 
 echo "=== DEBUG BEGIN ==="
 set -x
+echo "DEBUG: PWD=${PWD}"
 echo "DEBUG: OEROOT=${OEROOT}"
 ls -la
+ls -la $OEROOT
 ls -la $OEROOT/scripts
 echo "=== DEBUG END ==="
 export OEROOT
