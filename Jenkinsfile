@@ -109,7 +109,7 @@ try {
                 export GIT_COMMITTER_EMAIL='ci@ostroproject.org'
             """
             timestamps {
-            sshagent(['github-auth-ssh']) {
+            // TODO sshagent(['github-auth-ssh']) {
                 docker_image.inside(run_args) {
                     stage('Bitbake Build') {
                         if (is_pr) {
@@ -128,7 +128,7 @@ try {
                         sh "${params}"
                     }
                 }
-            } // sshagent
+            // TODO } // sshagent
             } // timestamps
             // all good, cleanup image (disabled for now, as also removes caches)
             // sh "docker rmi ${image_name}"
